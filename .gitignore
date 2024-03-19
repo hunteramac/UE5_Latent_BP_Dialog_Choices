@@ -1,3 +1,16 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!c2077approx\Private\AsyncChoice.cpp
+!c2077approx\Public\AsyncChoice.h
+
+!c2077approx\Private\ChoiceUIGameInstanceSubsystem.cpp
+!c2077approx\Public\ChoiceUIGameInstanceSubsystem.h
+
+#UE5 Gitignore
+
 # Visual Studio 2015 user specific files
 .vs/
 
