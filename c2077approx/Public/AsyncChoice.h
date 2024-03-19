@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintAsyncActionBase.h"
+
+#include "UObject/ObjectPtr.h"
 #include "AsyncChoice.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCommonMessagingResultMCDelegate, int, choice);
@@ -28,4 +30,7 @@ public:
 	FCommonMessagingResultMCDelegate OnResult;
 private:
 	void HandleConfirmationResult(int ChoiceMade);
+
+	UPROPERTY(Transient)
+	TObjectPtr<UObject> WorldContextObject;
 };

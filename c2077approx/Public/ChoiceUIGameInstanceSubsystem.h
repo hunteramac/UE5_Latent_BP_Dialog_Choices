@@ -16,7 +16,5 @@ class C2077APPROX_API UChoiceUIGameInstanceSubsystem : public UGameInstanceSubsy
 public:
 	UChoiceUIGameInstanceSubsystem() { }
 
-	virtual void Initialize();
-
 	virtual void ShowConfirmation();
 };
