@@ -26,9 +26,6 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	bool testAccessible;
 
-	//Can we store the callback for later? As is, doesnt compile
-	/*
-	UPROPERTY()
-	FCommonMessagingResultDelegate StoredCallback;
-	*/
+private:
+	FCommonMessagingResultDelegate OnResultCallback;
 };

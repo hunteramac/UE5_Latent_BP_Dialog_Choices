@@ -36,7 +36,8 @@ void UAsyncChoice::Activate()
 		//setup callback function for UI
 		FCommonMessagingResultDelegate ResultCallback = FCommonMessagingResultDelegate::CreateUObject(this, &UAsyncChoice::HandleConfirmationResult);
 
-		MySubsystem->ShowConfirmation(Actions, ResultCallback); //should be passing callback + choices for UI here
+		//Pass UI, choices to be displayed(list of player actions), and the callback to have node return choice made
+		MySubsystem->ShowConfirmation(Actions, ResultCallback);
 		return;
 	}
 
