@@ -14,14 +14,11 @@ UAsyncChoice::UAsyncChoice(const FObjectInitializer& ObjectInitializer)
 
 UAsyncChoice* UAsyncChoice::ShowActionChoices(UObject* InWorldContextObject, TArray<FText> Actions)
 {
-	UAsyncChoice* Action = NewObject<UAsyncChoice>();
-	Action->WorldContextObject = InWorldContextObject;
-
-	//make the UI
-	//Action->Descriptor = UCommonGameDialogDescriptor::CreateConfirmationYesNo(Title, Message);
-	//Action->RegisterWithGameInstance(InWorldContextObject);
-
-	return Action;
+	UAsyncChoice* Choices = NewObject<UAsyncChoice>();
+	Choices->WorldContextObject = InWorldContextObject;
+	Choices->Actions = Actions;
+	
+	return Choices;
 }
 
 void UAsyncChoice::Activate()
@@ -37,9 +34,9 @@ void UAsyncChoice::Activate()
 	if (UChoiceUIGameInstanceSubsystem* MySubsystem = GameInstance->GetSubsystem<UChoiceUIGameInstanceSubsystem>()) {
 
 		//setup callback function for UI
-		//FCommonMessagingResultDelegate ResultCallback = FCommonMessagingResultDelegate::CreateUObject(this, &UAsyncChoice::HandleConfirmationResult);
+		FCommonMessagingResultDelegate ResultCallback = FCommonMessagingResultDelegate::CreateUObject(this, &UAsyncChoice::HandleConfirmationResult);
 
-		MySubsystem->ShowConfirmation(); //should be passing callback + choices for UI here
+		MySubsystem->ShowConfirmation(Actions, ResultCallback); //should be passing callback + choices for UI here
 		return;
 	}
 
@@ -50,7 +47,7 @@ void UAsyncChoice::Activate()
 
 void UAsyncChoice::HandleConfirmationResult(int ChoiceMade)
 {
-	OnResult.Broadcast(0);
+	OnResult.Broadcast(ChoiceMade);
 
 	SetReadyToDestroy();
 }

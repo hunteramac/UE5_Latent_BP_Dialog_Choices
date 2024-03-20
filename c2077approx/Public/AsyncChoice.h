@@ -33,4 +33,7 @@ private:
 
 	UPROPERTY(Transient)
 	TObjectPtr<UObject> WorldContextObject;
+
+	UPROPERTY()
+	TArray<FText> Actions;
 };

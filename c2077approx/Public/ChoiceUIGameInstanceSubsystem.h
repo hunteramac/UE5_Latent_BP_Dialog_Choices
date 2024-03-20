@@ -6,6 +6,8 @@
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "ChoiceUIGameInstanceSubsystem.generated.h"
 
+DECLARE_DELEGATE_OneParam(FCommonMessagingResultDelegate, int /* Result */);
+
 /**
  * 
  */
@@ -16,5 +18,17 @@ class C2077APPROX_API UChoiceUIGameInstanceSubsystem : public UGameInstanceSubsy
 public:
 	UChoiceUIGameInstanceSubsystem() { }
 
-	virtual void ShowConfirmation();
+	UFUNCTION(BlueprintCallable)
+	void UIUserChoice(int Choice);
+
+	virtual void ShowConfirmation(TArray<FText> Actions, FCommonMessagingResultDelegate ResultCallback = FCommonMessagingResultDelegate());
+
+	UPROPERTY(BlueprintReadWrite)
+	bool testAccessible;
+
+	//Can we store the callback for later? As is, doesnt compile
+	/*
+	UPROPERTY()
+	FCommonMessagingResultDelegate StoredCallback;
+	*/
 };
