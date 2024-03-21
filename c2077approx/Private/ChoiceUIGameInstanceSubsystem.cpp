@@ -11,6 +11,8 @@ void UChoiceUIGameInstanceSubsystem::UIUserChoice(int Choice) {
 void UChoiceUIGameInstanceSubsystem::ShowConfirmation(TArray<FText> Actions, FCommonMessagingResultDelegate ResultCallback) {
 	// Setup ui
 	// Insert code that shows choices
+	//Store actions as a BP var that UI can read from the subsystem
+	DisplayActions = Actions;
 	
 	//store callback
 	OnResultCallback = ResultCallback;

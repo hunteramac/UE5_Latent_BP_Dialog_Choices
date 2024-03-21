@@ -12,7 +12,7 @@ UAsyncChoice::UAsyncChoice(const FObjectInitializer& ObjectInitializer)
 {
 }
 
-UAsyncChoice* UAsyncChoice::ShowActionChoices(UObject* InWorldContextObject, TArray<FText> Actions)
+UAsyncChoice* UAsyncChoice::WaitForChoice(UObject* InWorldContextObject, TArray<FText> Actions)
 {
 	UAsyncChoice* Choices = NewObject<UAsyncChoice>();
 	Choices->WorldContextObject = InWorldContextObject;

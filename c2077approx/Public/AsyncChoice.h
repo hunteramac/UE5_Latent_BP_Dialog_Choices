@@ -20,7 +20,7 @@ class C2077APPROX_API UAsyncChoice : public UBlueprintAsyncActionBase
 	GENERATED_UCLASS_BODY()
 public:
 	UFUNCTION(BlueprintCallable, BlueprintCosmetic, meta = (BlueprintInternalUseOnly = "true", WorldContext = "InWorldContextObject"))
-	static UAsyncChoice* ShowActionChoices(
+	static UAsyncChoice* WaitForChoice(
 		UObject* InWorldContextObject, TArray<FText> Actions
 	);
 

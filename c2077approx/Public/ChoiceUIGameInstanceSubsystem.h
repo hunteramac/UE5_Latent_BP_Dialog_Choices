@@ -26,6 +26,9 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	bool testAccessible;
 
+	UPROPERTY(BlueprintReadOnly)
+	TArray<FText> DisplayActions;
+
 private:
 	FCommonMessagingResultDelegate OnResultCallback;
 };
