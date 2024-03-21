@@ -6,8 +6,12 @@
 !c2077approx\Private\AsyncChoice.cpp
 !c2077approx\Public\AsyncChoice.h
 
+!c2077approx\Public\AsyncSequence.cpp
+!c2077approx\Public\AsyncSequence.h
+
 !c2077approx\Private\ChoiceUIGameInstanceSubsystem.cpp
 !c2077approx\Public\ChoiceUIGameInstanceSubsystem.h
+
 
 #UE5 Gitignore
 
