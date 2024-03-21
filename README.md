@@ -21,7 +21,7 @@ Note that an alternative communication/organization method which is much more el
 https://github.com/MothCocoon/FlowGraph
 I needed something messier to prototype small projects with.
 
-Prototype's current usage(WIP):
+Prototype's current usage(WIP) (On right is nodes to place inside UI widget):
 ![image](https://github.com/hunteramac/UE5_Latent_BP_Dialog_Choices/assets/16585398/daed3c8c-f52f-410f-b274-46717ee10fcc)
 Requirements:
 - You have a UI implementation that can take in a text array, and detect a player choice
