@@ -2,15 +2,18 @@
 
 #include "ChoiceUIGameInstanceSubsystem.h"
 
-void UChoiceUIGameInstanceSubsystem::ShowConfirmation() {
-	//We need to write something here to prove this method is running when called
-	//Debug out here
-	
-	UE_LOG(LogTemp, Warning, TEXT("Show dialog choices to player"));
+//Should be called by UI when a button is pressed by user
+//For prototyping, this function is public, but in future should be limited to only be callable by UI
+void UChoiceUIGameInstanceSubsystem::UIUserChoice(int Choice) {
+	OnResultCallback.Execute(Choice);
+}
 
-	//One option logs to screen
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("show dialog choices to player"));
-	}
+void UChoiceUIGameInstanceSubsystem::ShowConfirmation(TArray<FText> Actions, FCommonMessagingResultDelegate ResultCallback) {
+	// Setup ui
+	// Insert code that shows choices
+	//Store actions as a BP var that UI can read from the subsystem
+	DisplayActions = Actions;
+	
+	//store callback
+	OnResultCallback = ResultCallback;
 }
