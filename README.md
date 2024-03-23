@@ -43,5 +43,7 @@ Example of method I had been using purley in blueprints. Requires unique events 
 Implementation is based on Epic Games Lyra Shooter starter project which contains  a very nuanced implementation in ShowConfirmationMenu. Project retroffited functionality for use in specific application.
 See https://www.youtube.com/watch?v=p_biHD6QZvA (Not by me) for a good overview of ShowConfirmation menu
 
-Additionally functionallity in works
-- Async BP play sequence node, continues blueprint execution after sequence finishes playing without needing to bind an event handler
+Asyncronous Play Level Sequence node.
+Addititional functionality
+![image](https://github.com/hunteramac/UE5_Latent_BP_Dialog_Choices/assets/16585398/f50753e2-3d29-4fa3-8ac2-c17900b27a54)
+On sequence stops, returns exeuction. No need to manually bind specific events inside blueprint to handle sequence finishing.
