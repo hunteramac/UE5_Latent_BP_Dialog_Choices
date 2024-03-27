@@ -8,6 +8,9 @@
 
 DECLARE_DELEGATE_OneParam(FCommonMessagingResultDelegate, int /* Result */);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FShowChoicesDelegateRelay);
+
+
 /**
  * 
  */
@@ -28,6 +31,12 @@ public:
 
 	UPROPERTY(BlueprintReadOnly)
 	TArray<FText> DisplayActions;
+
+	UPROPERTY(BlueprintAssignable)
+	FShowChoicesDelegateRelay OnSubsystemShowChoice;
+
+	UFUNCTION(BlueprintCallable)
+	void SubsystemShowChoice();
 
 private:
 	FCommonMessagingResultDelegate OnResultCallback;

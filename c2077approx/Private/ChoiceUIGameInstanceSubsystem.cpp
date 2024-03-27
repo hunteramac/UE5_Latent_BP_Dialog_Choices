@@ -17,3 +17,7 @@ void UChoiceUIGameInstanceSubsystem::ShowConfirmation(TArray<FText> Actions, FCo
 	//store callback
 	OnResultCallback = ResultCallback;
 }
+
+void UChoiceUIGameInstanceSubsystem::SubsystemShowChoice() {
+	OnSubsystemShowChoice.Broadcast();
+}
