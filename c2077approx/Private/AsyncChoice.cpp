@@ -48,7 +48,11 @@ void UAsyncChoice::Activate()
 
 void UAsyncChoice::HandleConfirmationResult(int ChoiceMade)
 {
-	OnResult.Broadcast(ChoiceMade);
+	//Only return a player choice if positive, negative signals manually termination by game instead
+	if (ChoiceMade>=0) {
+		OnResult.Broadcast(ChoiceMade);
+	}
+	
 
 	SetReadyToDestroy();
 }

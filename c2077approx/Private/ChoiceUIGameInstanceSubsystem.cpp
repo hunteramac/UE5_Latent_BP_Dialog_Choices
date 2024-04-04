@@ -4,6 +4,7 @@
 
 //Should be called by UI when a button is pressed by user
 //For prototyping, this function is public, but in future should be limited to only be callable by UI
+//If choice is -1, async desconstructs
 void UChoiceUIGameInstanceSubsystem::UIUserChoice(int Choice) {
 	OnResultCallback.Execute(Choice);
 }
