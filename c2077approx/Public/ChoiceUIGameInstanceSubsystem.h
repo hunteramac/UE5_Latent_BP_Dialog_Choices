@@ -51,6 +51,12 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SubsystemShowOutcome();
 
+	UFUNCTION(BlueprintCallable)
+	void SetInactionDelays(bool state);
+
+	UPROPERTY(BlueprintReadOnly);
+	bool InactionContinueDelay;
+
 private:
 	FCommonMessagingResultDelegate OnResultCallback;
 };

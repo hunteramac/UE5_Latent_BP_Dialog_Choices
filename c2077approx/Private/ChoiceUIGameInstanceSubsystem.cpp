@@ -26,3 +26,7 @@ void UChoiceUIGameInstanceSubsystem::SubsystemShowChoice() {
 void UChoiceUIGameInstanceSubsystem::SubsystemShowOutcome() {
 	OnSubsystemShowOutcome.Broadcast();
 }
+
+void UChoiceUIGameInstanceSubsystem::SetInactionDelays(bool state) {
+	InactionContinueDelay = state;
+}
