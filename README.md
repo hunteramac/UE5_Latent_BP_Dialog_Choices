@@ -1,3 +1,5 @@
+See https://github.com/hunteramac/UE5-Plugin-DialogChoices for WIP plugin.
+
 ![image](https://github.com/hunteramac/UE5_Latent_BP_Dialog_Choices/assets/16585398/00534255-8fb6-4629-b561-3577fd3a1906)Top level is **Source** inside ue5 project. Developed inside project with name **c2077approx**.
 
 Project code demonstrates how very simple custom asyncronous bp and subsystems can be defined for a useful application that can't be readily acheived with blueprint exclusively.
